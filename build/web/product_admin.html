@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Admin page Tien's Farm
+    </title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="./css/admin.css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/admin.css/grid.css">
+    <link rel="stylesheet" href="./css/admin.css/style.css">
+    <link rel="stylesheet" href="./css/admin.css/responsive.css">
+    <script src="https://kit.fontawesome.com/ba20315c0b.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sidebar-expand">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="Protend logo">
+            </a>
+            <div class="sidebar-close" id="sidebar-close">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+        </div>
+        <!-- SIDEBAR MENU -->
+        <div class="simlebar-sc" data-simplebar>
+            <ul class="sidebar-menu tf">
+                <li>
+                    <a href="dashboard_admin.html">
+                        <i class='bx bxs-home'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clients_admin.html">
+                        <i class='bx bxs-user'></i>
+                        <span>Manager Client</span>
+
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Manager Product</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
+                        <div>
+                            <i class='bx bx-cog mr-10'></i>
+                            <span>darkmode</span>
+                        </div>
+
+                        <span class="darkmode-switch"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="d-flex">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="main-title">
+                Products
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center">
+
+            <!-- App Search-->
+
+            <div class="dropdown d-inline-block d-lg-none ms-2">
+                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class='bx bx-search-alt'></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                    aria-labelledby="page-header-search-dropdown">
+
+                    <form class="p-3">
+                        <div class="form-group m-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search ..."
+                                    aria-label="Recipient's username">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary h-100" type="submit"><i
+                                            class='bx bx-search-alt'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="dropdown d-inline-block">
+
+
+                <div class="dropdown-menu dropdown-menu-end">
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
+                        <img src="./images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span
+                            class="align-middle">English</span>
+                    </a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
+                        <img src="./images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span
+                            class="align-middle">Spanish</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
+                        <img src="./images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span
+                            class="align-middle">German</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
+                        <img src="./images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span
+                            class="align-middle">Italian</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
+                        <img src="./images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span
+                            class="align-middle">Russian</span>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="dropdown d-none d-lg-inline-block ms-1">
+                <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                        <i class="bx bx-fullscreen"></i>
+                    </button>
+            </div> -->
+            <div class="dropdown d-inline-block mt-12">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="./images/profile/profile.png"
+                        alt="Header Avatar">
+
+                    <span class="info d-xl-inline-block  color-span">
+                        <span class="d-block fs-20 font-w600">ADMIN DEP TRAI</span>
+                        <span class="d-block mt-7">admin</span>
+                    </span>
+
+                    <i class='bx bx-chevron-down'></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                        <span>Profile</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i>
+                        <span>My Wallet</span></a>
+                    <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i
+                            class="bx bx-wrench font-size-16 align-middle me-1"></i> <span>Settings</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i>
+                        <span>Lock screen</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="user-login.html"><i
+                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
+                        <span>Logout</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Header -->
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <div class="main-content client">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="box">
+                        <div class="box-body d-flex justify-content-between box-search pt-0 pb-0">
+                            <div class="search-form d-flex list-action">
+                                <input type="text" placeholder="Product Name" class="form-control">
+
+                                <button type="submit" class="search d-flex"><i class="fas fa-search"></i>Search</button>
+                            </div>
+                            <div class="list-action">
+
+                                <a href="#" class="add" data-toggle="modal" data-target="#add_client">Add product<i
+                                        class="fas fa-plus-circle"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 col-md-6 col-sm-12 mb-25">
+                    <div class="box client">
+
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class='bx bx-dots-horizontal-rounded'></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i
+                                        class="bx bx-trash"></i> Delete</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i
+                                        class="bx bx-edit mr-5"></i>Edit</a>
+                            </div>
+                        </div>
+                        <div class="box-body pt-5 pb-0">
+                            <div class="img-box">
+                                <img class="img-responsive" src="./images/product/tra-mang-cau-1-694.jpg" alt="">
+
+                            </div>
+                            <a href="client-details.html">
+                                <h5 class="mt-17">Trà mãng cầu</h5>
+                            </a>
+
+                            <p class="fs-14 font-w400 font-main">Ngon nhuc nach</p>
+                            <ul class="info">
+                                <li class="fs-14"><i class="fa-solid fa-money-bill-wave"></i></i> PRICE</li>
+                                <li class="fs-14"><i class="fa-solid fa-warehouse"></i>3</li>
+                            </ul>
+                            <div class="group-btn d-flex justify-content-between">
+                                <a class="bg-btn-pri color-white" href="message.html">Edit</a>
+                                <a class="bg-btn-sec color-main" href="user-profile.html">Delete</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="add_client" class="modal custom-modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add New Product</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Upload Picture</label>
+                                    <input class="form-control" type="file">
+                                </div>
+                                <div class="form-group">
+                                    <label>Details</label>
+                                    <input type="text" class="form-control" value="">
+                                    <p>CMN Lỗi rồi bạn</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Quantity</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+
+
+
+                                <div class="submit-section text-center">
+                                    <button class="btn btn-primary submit-btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal custom-modal fade" id="delete_client" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="form-header">
+                                <h3>Delete product</h3>
+                                <p>Are you sure want to delete?</p>
+                            </div>
+                            <div class="modal-btn delete-action">
+                                <div class="row">
+                                    <div class="col-6 mb-0">
+                                        <a href="javascript:void(0);" class="btn btn-primary continue-btn">Delete</a>
+                                    </div>
+                                    <div class="col-6 mb-0">
+                                        <a href="javascript:void(0);" data-dismiss="modal"
+                                            class="btn btn-primary cancel-btn">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="edit_client" class="modal custom-modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Client</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Client Name</label>
+                                    <input type="text" class="form-control" value="Tom Schneider">
+                                </div>
+                                <div class="form-group">
+                                    <label>Client Company</label>
+                                    <select class="form-control select">
+                                        <option>Company Name</option>
+                                        <option>Company Name</option>
+                                        <option>Company Name</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Client Phone</label>
+                                    <input type="text" class="form-control" value="(589)505-4521">
+                                </div>
+                                <div class="form-group">
+                                    <label>Client Email</label>
+                                    <input type="text" class="form-control" value="tom.name@mail.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Upload Files</label>
+                                    <input class="form-control" type="file">
+                                </div>
+                                <div class="submit-section text-center">
+                                    <button class="btn btn-primary submit-btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+
+    <div class="overlay"></div>
+
+    <!--Footer Starts-->
+    <footer id="footer" class="padding_t  ">
+        <div class="container footerBg">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+
+                    <ul class="social">
+                        <li><a href="#."><i class="icon-facebook-1"></i></a></li>
+                        <li><a href="#."><i class="icon-pinterest"></i></a></li>
+                        <li><a href="#."><i class="icon-twitter"></i></a></li>
+                        <li><a href="#."><i class="icon-google4"></i></a></li>
+                        <li><a href="#."><i class="icon-instagram"></i></a></li>
+                    </ul>
+                    <p class="heading_space top15 copyright-text text">Copyright &copy; 2023. All right reserved.
+                        Designed
+                        by <a href="#." style="font-weight: 500; color: #6096B4;"> CHALS</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer Ends-->
+
+    <!-- SCRIPT -->
+
+    <!-- Plugin -->
+
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/moment/min/moment.min.js"></script>
+    <script src="./libs/apexcharts/apexcharts.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./libs/peity/jquery.peity.min.js"></script>
+    <script src="./libs/chart.js/Chart.bundle.min.js"></script>
+    <script src="./libs/owl.carousel/owl.carousel.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./libs/simplebar/simplebar.min.js"></script>
+
+    <!-- APP JS -->
+    <script src="./js/admin_js/shortcode.js"></script>
+    <script src="./js/admin_js/pages/clients.js"></script>
+    <script src="./js/admin_js/main.js"></script>
+</body>
+
+</html>
